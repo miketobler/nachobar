@@ -1,0 +1,175 @@
+div.container {
+    width: 720px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0 auto;
+
+    div.login_block {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        grid-auto-rows: min-content;
+        column-gap: 100px;
+        align-content: center;
+        padding: 2em 0;
+
+        div.logo {
+            align-self: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        div.login {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-self: center;
+        }
+    }
+
+    div.footer {
+        display: flex;
+        flex-direction: column;
+        padding: 0.7em 0 1em 330px;
+        gap: 0.5em;
+
+        div.line {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap: 1.5em;
+
+            div.item {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+
+                div.title {
+                    font-size: 70%;
+                    margin-right: 0.5em;
+
+                    svg {
+                        width: 1.3em;
+                        margin-right: 0.3em;
+                        transform: translateY(0.3em);
+
+                        path {
+                            fill: var(--color-text);
+                        }
+                    }
+                }
+
+                div.info {
+                    font-size: 70%;
+                }
+
+                select {
+                    padding: 0.2em 0.2em;
+                    font-size: 65%;
+                    border-radius: 5px;
+                    border: 1px solid var(--color-input-border);
+                    color: var(--color-input-text);
+                    background: var(--color-input-background);
+                    outline: none;
+
+                    option {
+                        padding-left: 1em;
+                        background: var(--color-input-background);
+                    }
+                }
+
+                select:focus {
+                    border-color: var(--color-highlight);
+                    outline: 0.1em solid var(--color-highlight);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 890px) {
+    div.container {
+        width: 100%;
+
+        div.login_block {
+            grid-template-columns: 1fr 380px;
+            column-gap: 0;
+            padding-right: 70px;
+
+            div.logo {
+                text-align: center;
+
+                img {
+                    width: 230px;
+                }
+            }
+        }
+
+        div.footer {
+            align-items: center;
+            padding-left: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+    div.container {
+        width: 100%;
+
+        div.login_block {
+            display: block;
+            padding-right: 0;
+            align-content: start;
+            width: 310px;
+            margin: 0 auto;
+
+            div.logo {
+                text-align: center;
+                margin: 1em 0 3em 0;
+
+                img {
+                    width: 230px;
+                }
+            }
+        }
+
+        div.footer {
+            align-items: center;
+            padding-left: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 550px) {
+    div.container {
+        div.login_block {
+            div.logo {
+                margin: 0.7em 0 1.7em 0;
+
+                img {
+                    width: 150px;
+                }
+            }
+        }
+
+        div.footer {
+            div.line {
+                width: 100%;
+                justify-content: space-evenly;
+                gap: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 400px) {
+    div.container {
+        div.login_block {
+            padding-left: 1.7em;
+            padding-right: 1.7em;
+            width: 100%;
+        }
+    }
+}

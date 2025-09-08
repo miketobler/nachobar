@@ -1,0 +1,90 @@
+@mixin theme-light {
+    // general colors
+    --color-text: #0d1f38;
+    --color-background: #ffe9cc;
+
+    // buttons
+    --color-button: #ff491a;
+    --color-button-text: #ffffff;
+    --color-button-disabled: #ff491a30;
+    --color-button-disabled-text: #d82912a0;
+
+    // input
+    --color-input-text: #0d1f38;
+    --color-input-background: #ffffff;
+    --color-input-border: #ff9400a0;
+
+    // highlight colors (outline)
+    --color-highlight: #ff491a;
+}
+
+@mixin theme-dark {
+    // general colors
+    --color-text: #ffe9cc;
+    --color-background: #0d1f38;
+
+    // buttons
+    --color-button: #ff491a;
+    --color-button-text: #ffe9cc;
+    --color-button-disabled: #404040;
+    --color-button-disabled-text: #808080;
+
+    // input
+    --color-input-text: #ffe9cc;
+    --color-input-background: #0e1728;
+    --color-input-border: #ffe9cc70;
+
+    // highlight colors (outline)
+    --color-highlight: #ff9400;
+}
+
+:root {
+    @include theme-light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include theme-dark;
+    }
+}
+
+html.light-mode {
+    @include theme-light;
+}
+
+html.dark-mode {
+    @include theme-dark;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: var(--color-text);
+    background: var(--color-background);
+    font-size: 20px;
+}
+
+body.fixed {
+    overflow: hidden;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: var(--color-text);
+}
+
+a:focus {
+    outline: 0.15em solid var(--color-highlight);
+    outline-offset: 0.2em;
+    border-radius: 0.25em;
+}
